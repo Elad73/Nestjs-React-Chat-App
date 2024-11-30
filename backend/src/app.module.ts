@@ -18,6 +18,7 @@ import { UsersModule } from './users/users.module';
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      playground: true,
       autoSchemaFile: true,
     }),
     DatabaseModule,
