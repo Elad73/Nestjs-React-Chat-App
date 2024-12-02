@@ -18,5 +18,7 @@ import { User, UserSchema } from './entities/user.entity';
   // Register providers that can be injected into other classes
   // These services will be singleton instances shared across the module
   providers: [UsersResolver, UsersService, UsersRepository],
+  // export the UsersService so it can be used in other modules
+  exports: [UsersService],
 })
 export class UsersModule {}

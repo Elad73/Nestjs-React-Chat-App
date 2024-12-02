@@ -8,6 +8,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
 import { UsersModule } from './users/users.module';
 import { LoggerModule } from 'nestjs-pino';
+import { AuthModule } from './auth/auth.module';
 
 // main app module
 @Module({
@@ -48,6 +49,7 @@ import { LoggerModule } from 'nestjs-pino';
       // injecting the config service to the logger module
       inject: [ConfigService],
     }),
+    AuthModule,
   ],
   // importing the app controller to handle the root route
   controllers: [AppController],
